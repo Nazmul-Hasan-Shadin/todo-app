@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
-    const  {handleCreateUser}=useContext(AuthContext)
+    const  {handleCreateUser,handleUpdateNamePhoto}=useContext(AuthContext)
     const handleRegister=(e)=>{
         e.preventDefault()
       
@@ -13,7 +13,12 @@ const Register = () => {
         const password= form.get('password')
      
     //    
-        
+        handleCreateUser(email,password)
+        .then(res=>{
+            console.log(res);
+            handleUpdateNamePhoto(name)
+        })
+
 
         
     }
