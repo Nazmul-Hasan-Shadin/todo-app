@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Main = () => {
- 
+  const {handleLogOut} = useContext(AuthContext)
    const links= ['Home','About', 'Register','Let`s Explore']
  
    const navlinks=    links.map((link,index)=>(
@@ -29,6 +30,7 @@ const Main = () => {
                {
                 navlinks
                }
+              <button>  <li onClick={()=>handleLogOut()}>  Logout </li></button>
               </ul>
             </div>
           </div>

@@ -11,7 +11,7 @@ import Register from '../Pages/Register/Register';
         element: <Main></Main>,
         children:[
             {
-                path:'/',
+                path:'home',
                 element: <Home></Home>
             },
           { 
@@ -24,6 +24,11 @@ import Register from '../Pages/Register/Register';
      }
 
         ]
-    }
+    },
+
+     
+
+
+
   ])
 export default router;
