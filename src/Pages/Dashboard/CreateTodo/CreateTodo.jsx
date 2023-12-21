@@ -20,6 +20,8 @@ const CreateTodo = () => {
             return todos.data
         }
     })
+
+    const ongoingTodos= todos?.filter(todo=> todo.status==='ongoing' )
  
     if (isLoading) {
         return <span>loading</span>
@@ -32,7 +34,7 @@ const CreateTodo = () => {
 
             <div className="gird grid-cols-1 gap-12">
             {
-               todos?.map((todo,index)=> <TodoCard refetch={refetch} todo={todo} key={index}></TodoCard> )
+               ongoingTodos?.map((todo,index)=> <TodoCard refetch={refetch} todo={todo} key={index}></TodoCard> )
             }
             </div>
 

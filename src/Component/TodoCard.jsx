@@ -1,13 +1,24 @@
 import React from 'react';
 import useAxiosPublic from '../hook/useAxiosPublic';
+import toast from 'react-hot-toast';
 
-const TodoCard = ({todo}) => {
+const TodoCard = ({todo,refetch}) => {
     console.log(todo);
     const axiosPublic= useAxiosPublic()
-    const handleUpdateStatus=(id)=>{
+    const handleUpdateStatus=async(id)=>{
          
 
-        axiosPublic.patch(`/update-todo/${id}`)
+       
+       try {
+         const res= await axiosPublic.patch(`/update-todo/${id}`,{status:'completed'})
+          if (res.data.modifiedCount>0) {
+              toast.success('Todo has Completed')
+              refetch()
+          }
+
+       } catch (error) {
+        console.log(error);
+       }
 
 
     }
