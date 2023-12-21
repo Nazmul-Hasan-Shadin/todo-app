@@ -4,6 +4,8 @@ import Main from '../Layout/Main';
 import Login from '../Pages/Login/Login';
 import Home from '../Pages/Home/Home/Home';
 import Register from '../Pages/Register/Register';
+import LoggedInUserLayout from '../Layout/LoggedInUserLayout';
+import CreateTodo from '../Pages/Dashboard/CreateTodo/CreateTodo';
 
   const router= createBrowserRouter([
     {
@@ -21,10 +23,21 @@ import Register from '../Pages/Register/Register';
         { 
           path: '/register',
          element:<Register></Register>
-     }
-
+     },
+  
         ]
     },
+
+  {
+    path:'/dashboard',
+    element: <LoggedInUserLayout></LoggedInUserLayout>,
+    children:[
+      {
+        path:'/dashboard/create-todo',
+        element: <CreateTodo></CreateTodo>
+      }
+    ]
+  }
 
      
 
