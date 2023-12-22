@@ -2,7 +2,9 @@ import React from 'react';
  import herotodo from '../../../assets/images/herotodo.jpg'
 const Hero = () => {
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col  lg:flex-row-reverse lg:gap-[100px]">
           <img src={herotodo} className="md:max-w-md rounded-lg shadow-2xl" />
           <div className='lg:w-5/12'>

@@ -8,6 +8,7 @@ import LoggedInUserLayout from '../Layout/LoggedInUserLayout';
 import CreateTodo from '../Pages/Dashboard/CreateTodo/CreateTodo';
 import CompletedTodos from '../Component/CompletedTodos';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import About from '../Pages/About/About';
 
   const router= createBrowserRouter([
     {
@@ -26,6 +27,10 @@ import PrivateRoute from '../PrivateRoute/PrivateRoute';
           path: '/register',
          element:<Register></Register>
      },
+     {
+      path:'/about',
+      element: <About></About>
+     }
   
         ]
     },
