@@ -66,7 +66,7 @@ const CreateTodo = () => {
                         {/* drage and drop */}
         
        <div ref={drop} className="lg:w-5/12 h-screen-[100vh] bg-gray-400">
-             <h2 className="text-xxl mx-aut flex justify-center"> Drag Here To Complete Your Todo</h2>
+             <h2 className="text-xl mx-aut flex justify-center"> Drag Here To Complete Your Todo</h2>
          {
           board.map(todo=><DragTodo todo={todo} key={todo._id}></DragTodo>)
          }

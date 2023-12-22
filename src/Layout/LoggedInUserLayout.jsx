@@ -33,6 +33,7 @@ const LoggedInUserLayout = () => {
       {/* Sidebar content here */}
      <li> <Link  to={'/dashboard/create-todo'}> Create Todo</Link></li>
      <li> <Link  to={'/dashboard/completed-todo'}> Completed Todos</Link></li>
+     <li> <Link  to={'/'}> Home</Link></li>
     </ul>
   
   </div>

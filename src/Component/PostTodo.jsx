@@ -16,6 +16,7 @@ const PostTodo = ({refetch}) => {
         formState: { errors },
       } = useForm()
     
+            //  ====================handle submit handler===============================
       const onSubmit = (data) => {
           console.log(data);
         const todos= {
@@ -26,6 +27,8 @@ const PostTodo = ({refetch}) => {
             title: data?.title,
             status: 'ongoing'
         }
+              
+        //  ======================post todo ===================================
 
         axiosPublix.post('/create-todo',todos)
         .then(res=>{
@@ -35,6 +38,9 @@ const PostTodo = ({refetch}) => {
         })
         .catch(err=>{
            console.log(err);
+           if (err) {
+            toast.error(   err.response?.data?.error)
+           }
         })
       }
 
