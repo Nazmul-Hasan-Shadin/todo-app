@@ -3,14 +3,14 @@ import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Main = () => {
-  const {handleLogOut} = useContext(AuthContext)
+  const {handleLogOut,user} = useContext(AuthContext)
    const links= ['Home','About', 'Register','Let`s Explore']
  
    const navlinks=  <>
              <li>  <Link to={'/'}> Home </Link> </li>
              <li>  <Link to={'/about'}> About </Link> </li>
-             <li>  <Link to={'/login'}> Login </Link> </li>
-             <li>  <Link to={'/login'}> Lets Explore </Link> </li>
+            { !user && <li>  <Link to={'/login'}> Login </Link> </li>}
+       {    user? <li>  <Link to={'/dashboard'}> Dashboard </Link> </li> : <li>  <Link to={'/login'}> Lets Explore </Link> </li>}
             
    </>
    
