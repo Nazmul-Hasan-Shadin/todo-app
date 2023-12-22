@@ -34,7 +34,7 @@ const CreateTodo = () => {
           if (res.data.modifiedCount>0) {
              toast.success('Todo has  completed ')
           }
-           setBoard([...board ,todo ])
+           setBoard(board=>[...board,todo])
 
         })
         .catch(err=>console.log(err))
@@ -50,9 +50,9 @@ const CreateTodo = () => {
         return <span>loading</span>
     }
 
-  console.log(todos);
+
     return (
-        <div className="flex gap-4  w-full" >
+        <div className="flex  flex-col lg:flex-row gap-4   w-full" >
           <div className="lg:w-7/12 ">
           <PostTodo refetch={todosRefetch}></PostTodo>
 
@@ -63,9 +63,10 @@ const CreateTodo = () => {
 </div>
           </div>
 
-{/* drage and drop */}
+                        {/* drage and drop */}
         
        <div ref={drop} className="lg:w-5/12 h-screen-[100vh] bg-gray-400">
+             <h2 className="text-xxl mx-aut flex justify-center"> Drag Here To Complete Your Todo</h2>
          {
           board.map(todo=><DragTodo todo={todo} key={todo._id}></DragTodo>)
          }

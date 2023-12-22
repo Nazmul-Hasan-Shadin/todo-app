@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import Avatar from '../Component/Avatar/Avatar';
 
 const Main = () => {
   const {handleLogOut,user} = useContext(AuthContext)
@@ -30,22 +31,34 @@ const Main = () => {
               </label>
             </div> 
             <div className="flex-1 px-2 mx-2">Todo</div>
-            <div className="flex-none hidden lg:block">
-              <ul className="menu menu-horizontal">
+              <div className='block md:hidden'>
+              <Avatar></Avatar>
+              </div>
+            <div className="flex-none hidden lg:block items-center ">
+
+               
+           <div className='flex items-center px-4'>
+
+           <ul className="menu menu-horizontal mr-24">
                 {/* Navbar menu content here */}
                {
                 navlinks
                }
               <button>  <li onClick={()=>handleLogOut()}>  Logout </li></button>
               </ul>
+           <Avatar></Avatar>
+           </div>
             </div>
+
+
+
           </div>
           {/* Page content here */}
            <Outlet></Outlet>
         </div> 
         <div className="drawer-side">
           <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label> 
-          <ul className="menu p-4 w-80 min-h-full bg-base-200">
+          <ul className="menu p-4 w-[220px] md:w-80 min-h-full bg-base-200">
             {/* Sidebar content here */}
             {navlinks}
          

@@ -36,8 +36,8 @@ const TodoCard = ({todo,refetch}) => {
     }
 
     return (
-        <div ref={drag} className="card mb-8 bg-primary text-primary-content">
-        <div className="card-body">
+        <div ref={drag} className="card w-[400px] bg-primary mt-12 text-primary-content">
+        <div className="card-body p-2 pl-7">
 
           <h2 className="card-title"> {todo?.title} </h2>
           <p> {todo?.desc} </p>

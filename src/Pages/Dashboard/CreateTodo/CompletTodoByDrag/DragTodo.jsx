@@ -1,6 +1,7 @@
 
 
 const DragTodo = ({todo}) => {
+    console.log(todo);
 
     return (
          <div className="card mb-8 bg-primary text-primary-content">

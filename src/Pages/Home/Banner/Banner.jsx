@@ -6,6 +6,7 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { useRef } from 'react';
 import banner from '../../../assets/images/banner.png'
 import { Link } from 'react-router-dom';
+import './Banner.css'
 const Banner = () => {
     // const progressCircle = useRef(null);
     const progressContent = useRef(null);
@@ -29,11 +30,12 @@ const Banner = () => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper"
+        className="mySwiper  "
+      
       >
     
             <SwiperSlide> 
-                 <div className='relative'>
+                 <div className='relative '>
         <img className='w-full' src={banner} alt="" />
 
      <Link to={'/login'}>   <button className="btn btn-active btn-primary absolute bottom-10 left-[580px] ">Lets Explore</button></Link>

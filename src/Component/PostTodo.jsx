@@ -51,9 +51,9 @@ const PostTodo = ({refetch}) => {
 
       <select {...register("workLevel")} className="select select-bordered w-full max-w-xs">
   <option disabled selected>Select Todo Level</option>
-  <option>Normal Apple</option>
-  <option>Normal Orange</option>
-  <option>Normal Tomato</option>
+  <option>Hard</option>
+  <option>Moderate </option>
+  <option>Low</option>
 </select>
          
            <input type="date" placeholder="Type here" {...register("deadLine")} className="input input-bordered w-full " />

@@ -18,10 +18,10 @@ const LoggedInUserLayout = () => {
    </div>
   
   </div> 
-  <div className="drawer-side">
+  <div className="drawer-side z-[12]">
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label> 
   
-    <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+    <ul className="menu p-4 w-[206px] md:w-80 min-h-full bg-base-200 text-base-content">
     <div className="avatar online left-24 pb-5">
   <div className="w-24 rounded-full">
     <img src={user?.photoURL} />
