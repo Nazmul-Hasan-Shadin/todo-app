@@ -21,7 +21,7 @@ const LoggedInUserLayout = () => {
     <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
       {/* Sidebar content here */}
      <li> <Link  to={'/dashboard/create-todo'}> Create Todo</Link></li>
-     <li> <Link  to={'/dashboard/create-todo'}> Create Todo</Link></li>
+     <li> <Link  to={'/dashboard/completed-todo'}> Completed Todos</Link></li>
     </ul>
   
   </div>

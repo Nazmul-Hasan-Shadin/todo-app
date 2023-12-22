@@ -6,9 +6,15 @@ const Main = () => {
   const {handleLogOut} = useContext(AuthContext)
    const links= ['Home','About', 'Register','Let`s Explore']
  
-   const navlinks=    links.map((link,index)=>(
-      <li key={index}>  <Link to={`/${link.toLocaleLowerCase()}`}>  {link} </Link> </li>
-   ))
+   const navlinks=  <>
+             <li>  <Link to={'/'}> Home </Link> </li>
+             <li>  <Link to={'/about'}> About </Link> </li>
+             <li>  <Link to={'/login'}> Login </Link> </li>
+             <li>  <Link to={'/login'}> Lets Explore </Link> </li>
+            
+   </>
+   
+
  
 
 

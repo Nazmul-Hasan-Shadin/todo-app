@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
 
 
 const Login = () => {
   const navigate= useNavigate()
-  const  {signedInUser}=useContext(AuthContext)
+  const  {signedInUser,handleGoogleSignIn}=useContext(AuthContext)
   const handleLogin=(e)=>{
       e.preventDefault()
     
@@ -24,8 +25,20 @@ const Login = () => {
       })
 
 
+
+
       
   }
+
+
+  const handleGoogle=()=>{
+    handleGoogleSignIn()
+    .then(res=>{
+      navigate('/dashboard')
+    })
+  }
+
+
     return (
 <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
@@ -52,6 +65,12 @@ const Login = () => {
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary bg-red-700">Login</button>
+           <span onClick={handleGoogle} className=" text-center pt-4">
+
+           <FcGoogle className="text-4xl mx-auto" />
+
+           </span>
+           <span>Dont have account?  <Link className="text-blue-400" to={'/register'}> Register </Link> </span>
         </div>
       </form>
     </div>

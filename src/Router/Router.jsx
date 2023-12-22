@@ -6,6 +6,7 @@ import Home from '../Pages/Home/Home/Home';
 import Register from '../Pages/Register/Register';
 import LoggedInUserLayout from '../Layout/LoggedInUserLayout';
 import CreateTodo from '../Pages/Dashboard/CreateTodo/CreateTodo';
+import CompletedTodos from '../Component/CompletedTodos';
 
   const router= createBrowserRouter([
     {
@@ -13,7 +14,7 @@ import CreateTodo from '../Pages/Dashboard/CreateTodo/CreateTodo';
         element: <Main></Main>,
         children:[
             {
-                path:'home',
+                path:'/',
                 element: <Home></Home>
             },
           { 
@@ -35,6 +36,10 @@ import CreateTodo from '../Pages/Dashboard/CreateTodo/CreateTodo';
       {
         path:'/dashboard/create-todo',
         element: <CreateTodo></CreateTodo>
+      },
+      {
+        path:'/dashboard/completed-todo',
+        element:<CompletedTodos></CompletedTodos>
       }
     ]
   }

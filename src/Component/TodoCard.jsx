@@ -32,7 +32,7 @@ const TodoCard = ({todo,refetch}) => {
           <div className=" justify-end">
           <div className='flex justify-between'>
           <p> DeadLine: {todo?.deadLine} </p>
-         <button onClick={()=>handleUpdateStatus(todo._id)} className='btn'>Complet</button>
+         <button onClick={()=>handleUpdateStatus(todo._id)} className='btn'>  {todo?.status==='completed'?'completed':'complete'} </button>
           </div>
            <p>  </p>
           </div>
