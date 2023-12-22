@@ -42,7 +42,7 @@ const PostTodo = ({refetch}) => {
 
     return (
         <div >
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
             <textarea name='todoDesc' {...register("todoDesc")} placeholder="Create Your Todo Now" className="textarea textarea-bordered textarea-md w-full " ></textarea>
              <label htmlFor="">Title</label>
              <input type="text" placeholder="Type here" {...register("title")} className="input input-bordered w-full " />

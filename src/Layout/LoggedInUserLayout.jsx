@@ -12,7 +12,10 @@ const LoggedInUserLayout = () => {
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content flex flex-col  ">
     {/* Page content here */}
-    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+
+    <label htmlFor="my-drawer-2" aria-label="open sidebar" className="btn btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </label>
     <div className='p-16'>
     <Outlet ></Outlet>
    </div>
@@ -22,8 +25,8 @@ const LoggedInUserLayout = () => {
     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label> 
   
     <ul className="menu p-4 w-[206px] md:w-80 min-h-full bg-base-200 text-base-content">
-    <div className="avatar online left-24 pb-5">
-  <div className="w-24 rounded-full">
+    <div className="avatar online lg:left-24 pb-5">
+  <div className=" w-14 lg:w-24 flex  rounded-full">
     <img src={user?.photoURL} />
   </div>
 </div>

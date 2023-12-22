@@ -20,7 +20,7 @@ const Login = () => {
   signedInUser(email,password)
       .then(res=>{
           console.log(res);
-          navigate('/dashboard')
+          navigate('/dashboard/create-todo')
          
       })
 
@@ -34,7 +34,7 @@ const Login = () => {
   const handleGoogle=()=>{
     handleGoogleSignIn()
     .then(res=>{
-      navigate('/dashboard')
+      navigate('/dashboard/create-todo')
     })
   }
 

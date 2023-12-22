@@ -17,7 +17,6 @@ const TodoCard = ({ todo, refetch }) => {
 
   // ===================update todo status by patch =================================
 
-
   const axiosPublic = useAxiosPublic();
   const handleUpdateStatus = async (id) => {
     try {
@@ -33,22 +32,18 @@ const TodoCard = ({ todo, refetch }) => {
     }
   };
 
-     // ===================update todo status  end=================================
+  // ===================update todo status  end=================================
 
-    
-     const handleDeleteTodo=(id)=>{
-        
-           axiosPublic.delete(`/todo-delete/${id}`)
-           .then(res=> {
-             console.log(res);
-             refetch()
-             toast.success('Deleted Successful')
-           })
-           .catch(err=>console.log(err))
-     }
-
-
-
+  const handleDeleteTodo = (id) => {
+    axiosPublic
+      .delete(`/todo-delete/${id}`)
+      .then((res) => {
+        console.log(res);
+        refetch();
+        toast.success("Deleted Successful");
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <div
@@ -58,7 +53,7 @@ const TodoCard = ({ todo, refetch }) => {
       <div className="card-body p-2 pl-7">
         <span className="flex justify-between">
           <h2 className="card-title"> {todo?.title} </h2>
-          <FaTrash onClick={()=>handleDeleteTodo(todo?._id)} />
+          <FaTrash onClick={() => handleDeleteTodo(todo?._id)} />
         </span>
 
         <p> {todo?.desc} </p>
