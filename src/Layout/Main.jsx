@@ -18,12 +18,12 @@ const Main = () => {
         {" "}
         <Link to={"/about"}> About </Link>{" "}
       </li>
-      {!user && (
+      {/* {!user && (
         <li>
           {" "}
           <Link to={"/login"}> Login </Link>{" "}
         </li>
-      )}
+      )} */}
       {user ? (
         <li>
           {" "}
@@ -80,7 +80,10 @@ const Main = () => {
                 {navlinks}
                 <button>
                   {" "}
-                  <li onClick={() => handleLogOut()}> Logout </li>
+               { user?    <li onClick={() => handleLogOut()}> Logout </li>:    <li>
+          {" "}
+          <Link to={"/login"}> Login </Link>{" "}
+        </li>  }
                 </button>
               </ul>
               <Avatar></Avatar>

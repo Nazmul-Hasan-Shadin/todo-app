@@ -11,13 +11,14 @@ const Register = () => {
         console.log(form);
         const name= form.get('name');
         const email= form.get('email')
+        const photo= form.get('photo')
         const password= form.get('password')
      
     //    
         handleCreateUser(email,password)
         .then(res=>{
             console.log(res);
-            handleUpdateNamePhoto(name)
+            handleUpdateNamePhoto(name,photo)
         })
 
 
@@ -44,6 +45,14 @@ const Register = () => {
           </label>
           <input type="email" name="email" placeholder="email" className="input input-bordered" required />
         </div>
+
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Photourl</span>
+          </label>
+          <input type="text" name="photo" placeholder="email" className="input input-bordered" required />
+        </div>
+
 
         <div className="form-control">
           <label className="label">
